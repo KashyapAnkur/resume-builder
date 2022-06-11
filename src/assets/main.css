@@ -1,0 +1,22 @@
+@import './homepage.css';
+@import './header.css';
+@import './login.css';
+@import './register.css';
+@import './styles.css';
+
+* {
+    margin:0;
+    padding: 0;
+}
+.main {
+    margin-top: 70px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.homepage-right-image {
+    width: 450px;
+    height: 450px;
+    border-radius: 100%;
+}
