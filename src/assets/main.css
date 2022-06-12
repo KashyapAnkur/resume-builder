@@ -3,6 +3,7 @@
 @import './login.css';
 @import './register.css';
 @import './styles.css';
+@import './Template1.css';
 
 * {
     margin:0;

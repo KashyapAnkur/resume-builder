@@ -1,0 +1,103 @@
+.template1-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.template-left {
+    background-color: #0dc9fd82;
+    width: 20%;
+    height: 100vh;
+    color: grey;
+    font-family: bold;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 33px;
+}
+
+.template-right {
+    background-color: white;
+    width: 60%;
+    height: 100vh;
+    border: 1px solid grey;
+    color: grey;
+}
+
+.your_name {
+    padding: 5px;
+    color: grey;
+    font-size: 33px;
+    text-align: left;
+}
+
+.profession {
+    padding: 5px;
+    color: grey;
+    font-size: 23px;
+    text-align: left;
+}
+
+.contact, .skills {
+    font-size: 23px;
+    text-align: left;
+    background-color: grey;
+    padding: 5px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: white;
+}
+
+.template_textbox {
+    width: 270px;
+    height: 40px;
+    background-color: #0dc9fd82;
+    border: none;
+}
+
+.template_textarea {
+    background-color: #0dc9fd82;
+}
+
+.address {
+    /* padding: 5px; */
+    color: grey;
+    font-size: 33px;
+    text-align: left;
+}
+
+.template_textarea {
+    
+}
+
+.about {
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.work-history-main {
+    padding: 10px 10px 10px 20px;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+}
+
+.work-history{
+    width: 100%;
+    padding: 20px;
+}
+
+.work-history-left {
+    display: inline-block;
+    width: 20%;
+}
+
+.work-history-right {
+    display: inline-block;
+    width: 70%;
+}
+
+.skills_details{
+    font-size: 17px;
+}

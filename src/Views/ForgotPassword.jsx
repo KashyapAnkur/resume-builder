@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import TextInput from '../Components/TextInput';
 import Button from '../Components/Button';
 import { ToastContainer, toast } from 'react-toastify';
+import emailjs from '@emailjs/browser';
 
 const ForgotPassword = () => {
     const formik = useFormik({

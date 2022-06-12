@@ -25,25 +25,20 @@ export const Register = () => {
           email: '',
           password: '',
           cpassword: '',
-          agreeTerms: ''
+          agreeTerms: false
         },
         validationSchema: Yup.object({
             fullname: Yup.string()
-            //   .max(15, 'Must be 15 characters or less')
               .required('Fullname Required'),
             email: Yup.string().email('Invalid email address').required('Required'),
-            password: Yup.string()
-                  .min(8, 'Must be 8 characters atleast')
-              .required('Password Required'),
-            cpassword: Yup.string()
-                .min(8, 'Must be 8 characters atleast')
-              .oneOf([Yup.ref('password'), null], 'Passwords must match'),
-            agreeTerms: Yup.string()
-                .required('Agree terms is required!')
-        }),     
+            password: Yup.string().min(8,"Minimum 8 characters required").required('Password Required'),
+            cpassword: Yup.string().min(8,"Minimum 8 characters required").required('Confirm Password Required')
+            .oneOf([Yup.ref('password'), null], 'Passwords must match'),
+            agreeTerms: Yup.boolean().oneOf([true],'Terms agreement Required')
+        }),
         onSubmit: values => {
           alert(JSON.stringify(values, null, 2));
-        },
+        }
     });
 
     return (
@@ -145,7 +140,7 @@ export const Register = () => {
                                     <label className="form-check-label" htmlFor="form2Example3">
                                         I agree all statements in 
                                         <a
-                                            href="#!" 
+                                            href="#!"
                                             onClick={handleModal}
                                         >Terms of service</a>
                                     </label>

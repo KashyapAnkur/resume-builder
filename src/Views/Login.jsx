@@ -23,7 +23,7 @@ export const Login = () => {
                 .required('Password Required')
         }),     
         onSubmit: values => {
-          alert(JSON.stringify(values, null, 2));
+          console.log(values, "login values")
         },
     });
 
@@ -85,7 +85,7 @@ export const Login = () => {
                                     <Button
                                         type="submit"
                                         className="btn btn-primary btn-lg"
-                                        btnText="Register"
+                                        btnText="Login"
                                     />
                                 </div>
                                 <div className="form-check d-flex justify-content-center mb-2">

@@ -1,13 +1,17 @@
 import React from 'react';
 
 const TextArea = ({
-    placeholder
+    placeholder,
+    rows,
+    cols,
+    className
 }) => {
   return (
     <div>
         <textarea
-            rows="2"
-            cols="23"
+          className={className}
+            rows={rows}
+            cols={cols}
             placeholder={placeholder}
         />
     </div>

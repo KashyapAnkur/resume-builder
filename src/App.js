@@ -8,8 +8,11 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import PrivateRoute from './Routes/PrivateRoutes';
 import ForgotPassword from './Views/ForgotPassword';
 import ResetPassword from './Views/ResetPassword';
+import moment from 'moment';
+import Template1 from './Components/Templates/Template1';
 
 const App = () => {
+    
   return (
     <BrowserRouter>
       <Switch>
@@ -21,6 +24,7 @@ const App = () => {
             <Route strict exact path="/register" component={Register} />
             <Route strict exact path="/forgotpassword" component={ForgotPassword} />
             <Route strict exact path="/resetpassword" component={ResetPassword} />
+            <Route strict exact path="/template1" component={Template1} />
           </div>
         </Container>
       </Switch>
