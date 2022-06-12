@@ -1,0 +1,15 @@
+.templates {
+    /* display: flex; */
+}
+
+.templates-image {
+    margin: 20px;
+    width: 400px;
+    height: 400px;
+}
+
+.selected-template {
+    border: 4px solid #0d6efd;
+    display: inline-block;
+    width: 400px;
+}

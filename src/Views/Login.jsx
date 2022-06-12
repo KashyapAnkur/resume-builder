@@ -10,7 +10,7 @@ import * as Yup from 'yup';
 import Modals from '../Components/Modals/Modals';
 import axios from 'axios';
 
-export const Login = () => {
+export const Login = (props) => {
 
     const formik = useFormik({
         initialValues: {
@@ -29,6 +29,7 @@ export const Login = () => {
     });
 
     const Login = (values) => {
+        props.history.push("/profilepage");
         let request = {
             "userName": values.email,
             "passWord": values.password
@@ -39,6 +40,7 @@ export const Login = () => {
             .then((response) => {
                 if(response.isSuccess) {
                     //create profile page
+                    props.history.push("/profilepage");
                 } else {
 
                 }

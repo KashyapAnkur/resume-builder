@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TextInput from '../TextInput';
 import TextArea from '../TextArea';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 const Template1 = () => {
+    const [profileData, setProfileData] = useState({});
+
+    useEffect(() => {
+        const data = localStorage.getItem("profileData") ? JSON.parse(localStorage.getItem("profileData")) : {};
+        setProfileData({...data});
+    }, []);
+    // {Object.keys(profileData).length > 0 }
     const formik = useFormik({
         initialValues: {
           name: '',
-          password: ''
+          address: '',
+          phone: '',
+          email: '',
+          skills: [],
+          about: ''
         },
         validationSchema: Yup.object({
             email: Yup.string().email('Invalid email address').required('Email Required'),

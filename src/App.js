@@ -10,6 +10,7 @@ import ForgotPassword from './Views/ForgotPassword';
 import ResetPassword from './Views/ResetPassword';
 import moment from 'moment';
 import Template1 from './Components/Templates/Template1';
+import { ProfilePage } from './Views/ProfilePage';
 
 const App = () => {
     
@@ -25,6 +26,7 @@ const App = () => {
             <Route strict exact path="/forgotpassword" component={ForgotPassword} />
             <Route strict exact path="/resetpassword" component={ResetPassword} />
             <Route strict exact path="/template1" component={Template1} />
+            <PrivateRoute strict exact path="/profilepage" component={ProfilePage} />
           </div>
         </Container>
       </Switch>
