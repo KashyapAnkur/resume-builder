@@ -8,6 +8,7 @@ import Resume from '../assets/images/rb.png';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Modals from '../Components/Modals/Modals';
+import axios from 'axios';
 
 export const Login = () => {
 
@@ -23,9 +24,33 @@ export const Login = () => {
                 .required('Password Required')
         }),     
         onSubmit: values => {
-          console.log(values, "login values")
+          Login(values);
         },
     });
+
+    const Login = (values) => {
+        let request = {
+            "userName": values.email,
+            "passWord": values.password
+        };
+        console.log(values, "values")
+        try {
+            axios.post("/api/Auth/SignIn", request)
+            .then((response) => {
+                if(response.isSuccess) {
+                    //create profile page
+                } else {
+
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        } catch(error) {
+            console.log(error);
+        }
+
+    }
 
     return (
         <div className="vh-100" style={{backgroundColor: '#eee'}}>

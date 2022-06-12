@@ -8,9 +8,12 @@ import Resume from '../assets/images/rb.png';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Modals from '../Components/Modals/Modals';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
 
 export const Register = () => {
     const [show, setShow] = useState(false);
+    const [toastColor, setToastColor] = useState("");
     const handleModal = () => {
         setShow(true);
     };
@@ -37,12 +40,49 @@ export const Register = () => {
             agreeTerms: Yup.boolean().oneOf([true],'Terms agreement Required')
         }),
         onSubmit: values => {
-          alert(JSON.stringify(values, null, 2));
+            Register(values);
         }
     });
 
+    const Register = (values) => {
+        let request = {
+            "userName": values.fullname.split(" ")[0] + values.fullname.split(" ")[1],
+            "firstName": values.fullname.split(" ")[0],
+            "lastName": values.fullname.split(" ")[1],
+            "email": values.email,
+            "password": values.password
+        }
+        axios.post("/api/Auth/SignUp", request)
+        .then((response) => {
+            if(response.isSuccess) {
+                setToastColor("green");
+                Toastify("Successfully registered.");
+            } else {
+                setToastColor("red");
+                Toastify("Something went wrong.");
+            }
+            console.log(response);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }
+
+    const Toastify = (toastMsg) => {
+        toast.dark(toastMsg, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    }
+
     return (
         <div className="vh-100" style={{backgroundColor: '#eee'}}>
+            <ToastContainer toastStyle={{ backgroundColor: toastColor }} />
             <div className="container h-100">
                 <div className="row d-flex justify-content-center align-items-center h-100">
                 <div className="col-lg-12 col-xl-11">
