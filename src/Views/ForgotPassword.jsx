@@ -1,13 +1,15 @@
-import React from 'react';
+import React,{useRef} from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 import TextInput from '../Components/TextInput';
 import Button from '../Components/Button';
 import { ToastContainer, toast } from 'react-toastify';
-import emailjs from '@emailjs/browser';
+import emailjs from 'emailjs-com';
+
 
 const ForgotPassword = () => {
+    const formRef = useRef();
     const formik = useFormik({
         initialValues: {
           email: '',
@@ -16,9 +18,22 @@ const ForgotPassword = () => {
             email: Yup.string().email('Invalid email address').required('Email Required')
         }),     
         onSubmit: values => {
-          notify();
+            alert()
+        //   notify();
+        sendEmail();
         },
     });
+
+    const sendEmail = () => {
+        
+    
+        emailjs.sendForm('service_hzgtgg6', 'template_o87jb2c', formRef.current, 'POGxKM9S2x6mw8uTP')
+          .then((result) => {
+              console.log(result);
+          }, (error) => {
+              console.log(error.text);
+          });
+      };
     
     const notify = () => {
         toast.dark('OTP sent. Please check your Email ID.', {
@@ -44,7 +59,7 @@ const ForgotPassword = () => {
                         <div className="row justify-content-center">
                         <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                             <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Forgot Password</p>
-                            <form onSubmit={formik.handleSubmit} className="mx-1 mx-md-4">
+                            <form ref={formRef} onSubmit={formik.handleSubmit} className="mx-1 mx-md-4">
                                 <div className="d-flex flex-row align-items-center mb-4">
                                     <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                     <div className="form-outline flex-fill mb-0">
