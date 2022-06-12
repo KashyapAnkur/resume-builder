@@ -1,0 +1,11 @@
+E:\Hackathon\iSmartResumeBuilder\BLiSmart\bin\Debug\BLiSmart.dll
+E:\Hackathon\iSmartResumeBuilder\BLiSmart\bin\Debug\BLiSmart.pdb
+E:\Hackathon\iSmartResumeBuilder\BLiSmart\bin\Debug\DLiSmart.dll
+E:\Hackathon\iSmartResumeBuilder\BLiSmart\bin\Debug\System.Data.SqlClient.dll
+E:\Hackathon\iSmartResumeBuilder\BLiSmart\bin\Debug\DLiSmart.pdb
+E:\Hackathon\iSmartResumeBuilder\BLiSmart\bin\Debug\System.Data.SqlClient.xml
+E:\Hackathon\iSmartResumeBuilder\BLiSmart\obj\Debug\BLiSmart.csproj.AssemblyReference.cache
+E:\Hackathon\iSmartResumeBuilder\BLiSmart\obj\Debug\BLiSmart.csproj.CoreCompileInputs.cache
+E:\Hackathon\iSmartResumeBuilder\BLiSmart\obj\Debug\BLiSmart.csproj.CopyComplete
+E:\Hackathon\iSmartResumeBuilder\BLiSmart\obj\Debug\BLiSmart.dll
+E:\Hackathon\iSmartResumeBuilder\BLiSmart\obj\Debug\BLiSmart.pdb
